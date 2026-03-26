@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Hina ❤️</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to bottom, #ffe4e6, #fecdd3, #fda4af);
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Floating hearts */
+    .heart {
+      position: fixed;
+      bottom: -10px;
+      font-size: 18px;
+      animation: floatUp 6s linear infinite;
+      opacity: 0.7;
+    }
+
+    @keyframes floatUp {
+      0% { transform: translateY(0) scale(1); opacity: 0.7; }
+      100% { transform: translateY(-110vh) scale(1.5); opacity: 0; }
+    }
+
+    section { padding: 40px 15px; text-align: center; }
+    .hero { height: 100vh; display:flex; flex-direction:column; justify-content:center; align-items:center; }
+    h1 { font-size: 2.5rem; margin: 0.5em 0; }
+    h2 { font-size: 1.8rem; margin: 0.5em 0; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+    }
+    .card {
+      background:white; border-radius:15px; padding:12px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      opacity:0; transform:translateY(40px); transition:0.6s;
+    }
+    .card.show { opacity:1; transform:translateY(0); }
+    .img-placeholder { height:120px; background:#fda4af; border-radius:10px; margin-bottom:8px; }
+
+    button {
+      padding:12px 20px; border:none; border-radius:12px;
+      font-size:16px; cursor:pointer; background:#fb7185; color:white;
+    }
+
+    .story p { opacity:0; transform:translateY(20px); transition:0.6s; }
+    .story p.show { opacity:1; transform:translateY(0); }
+
+    /* Hidden page */
+    #hiddenPage {
+      display:none;
+      position:fixed;
+      top:0; left:0; width:100%; height:100%;
+      background:#fff0f3;
+      z-index:1000;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      padding:20px;
+      overflow-y: auto;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 480px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.5rem; }
+      .card { padding: 10px; }
+      .img-placeholder { height:100px; }
+      button { padding:10px 18px; font-size:15px; }
+      section { padding: 30px 10px; }
+      .heart { font-size: 16px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating Hearts Script -->
+<script>
+  function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "heart";
+    heart.innerHTML = "❤️";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.animationDuration = (3 + Math.random() * 3) + "s";
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 6000);
+  }
+  setInterval(createHeart, 300);
+</script>
+
+<!-- Hero -->
+<section class="hero">
+  <h1>Happy Birthday Hitakshi ❤️</h1>
+  <h2>My Hina 💕</h2>
+  <p>To the most beautiful soul in my life — today is yours, just like my heart is.</p>
+</section>
+
+<!-- Timer -->
+<section>
+  <h2>Time Since I Met You ⏳</h2>
+  <p id="timer"></p>
+</section>
+
+<!-- Memories -->
+<section style="background:white;">
+  <h2>Our Cute Little Memories 💞</h2>
+  <div class="grid">
+    <div class="card"><div class="img-placeholder"></div>Your smile 😍</div>
+    <div class="card"><div class="img-placeholder"></div>Our laughs 😂</div>
+    <div class="card"><div class="img-placeholder"></div>That perfect day 🌸</div>
+    <div class="card"><div class="img-placeholder"></div>Holding your hand 🤝</div>
+    <div class="card"><div class="img-placeholder"></div>Your cute anger 😝</div>
+    <div class="card"><div class="img-placeholder"></div>Every moment with you 💖</div>
+  </div>
+</section>
+
+<!-- Love Letter -->
+<section>
+  <h2>A Letter For My Hina 💌</h2>
+  <p>My dearest Hitakshi, my Hina… from the moment you walked into my life, everything changed. The world feels softer, brighter, and so much more beautiful with you in it.</p>
+  <p>I fall in love with you in the little things — the way you smile, the way you talk, even the way you get a little mad sometimes. You are my peace, my happiness, and my favorite feeling.</p>
+  <p>If I could give you anything, it would be the ability to see yourself through my eyes — because to me, you are absolutely perfect.</p>
+  <p>Happy Birthday my love ❤️ I love you forever, Hina.</p>
+</section>
+
+<!-- Story -->
+<section style="background:white;" class="story">
+  <h2>Our Love Story 💕</h2>
+  <p data-text="The day I met you — January 13, 2026 ❤️"></p>
+  <p data-text="The day I found the courage to say 'I love you' — January 17, 2026 💖"></p>
+  <p data-text="Slowly, you started understanding me… and I knew I never want to lose you 💞"></p>
+  <p data-text="Our first date — I knew you were special 🌹"></p>
+  <p data-text="Every moment with you makes me fall deeper in love ✨"></p>
+  <p data-text="Now every day with you feels like home ❤️"></p>
+</section>
+
+<!-- Final -->
+<section class="hero">
+  <h1>Will you stay with me forever? 💖</h1>
+  <button onclick="openLovePage()">Yes ❤️</button>
+</section>
+
+<!-- Hidden Love Page -->
+<div id="hiddenPage">
+  <div>
+    <h1>My Forever ❤️</h1>
+    <p>Hina, choosing you was never a question… it was always the only answer.</p>
+    <p>I promise to love you, support you, and stand by you no matter what.</p>
+    <p>You are my today, my tomorrow, and my forever.</p>
+    <p>I love you endlessly ❤️</p>
+    <button onclick="closeLovePage()">Close 💕</button>
+  </div>
+</div>
+
+<!-- Footer -->
+<section>
+  <p>Made with endless love for Hina ❤️</p>
+</section>
+
+<script>
+  // Timer
+  const startDate = new Date("2026-01-13T00:00:00");
+  function updateTimer() {
+    const now = new Date();
+    const diff = now - startDate;
+    const days = Math.floor(diff / (1000*60*60*24));
+    const hours = Math.floor((diff/(1000*60*60))%24);
+    const minutes = Math.floor((diff/(1000*60))%60);
+    document.getElementById("timer").innerText = `${days} days ${hours} hrs ${minutes} mins`;
+  }
+  setInterval(updateTimer,1000);
+
+  // Scroll animation
+  const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){ entry.target.classList.add("show"); }
+    });
+  });
+  document.querySelectorAll(".card, .story p").forEach(el=>observer.observe(el));
+
+  // Typing
+  function typeText(el,text,i=0){
+    if(i<text.length){ el.innerHTML+=text.charAt(i);
+      setTimeout(()=>typeText(el,text,i+1),25);
+    }
+  }
+  const storyLines=document.querySelectorAll(".story p");
+  const storyObserver=new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting && !entry.target.dataset.done){
+        typeText(entry.target,entry.target.dataset.text);
+        entry.target.dataset.done=true;
+      }
+    });
+  },{threshold:0.6});
+  storyLines.forEach(line=>storyObserver.observe(line));
+
+  // Hidden page
+  function openLovePage(){ document.getElementById("hiddenPage").style.display="flex"; }
+  function closeLovePage(){ document.getElementById("hiddenPage").style.display="none"; }
+</script>
+
+</body>
+</html>
